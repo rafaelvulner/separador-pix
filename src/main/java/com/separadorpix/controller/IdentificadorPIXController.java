@@ -27,8 +27,8 @@ public class IdentificadorPIXController {
     @PostMapping("/save")
     public String identificarPIX(@ModelAttribute("input") String input, Model model, RedirectAttributes redirectAttributes) {
         String identificadorPIX = identificadorPIXService.extrairIdentificadorPIX(input);
-        model.addAttribute("identificador", identificadorPIX);
-        redirectAttributes.addFlashAttribute("identificador", identificadorPIX);
+        model.addAttribute("identificador", "Eu retirei sua chave pix das outras Strings, ele é: " + identificadorPIX+ " porém, você vai precisar recortar de novo, pra largar a mão de ser preguiçoso kkkk");
+        redirectAttributes.addFlashAttribute("identificador", "Eu retirei sua chave pix das outras Strings, ele é: " + identificadorPIX+ " porém, você vai precisar recortar de novo, pra largar a mão de ser preguiçoso kkkk");
         return "redirect:/pix/format";
     }
 
